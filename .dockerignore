@@ -1,0 +1,17 @@
+dataset/
+output/
+*.tsv
+*.csv
+__pycache__/
+*.pyc
+*.pyo
+.git/
+.gitignore
+.DS_Store
+*.ipynb_checkpoints
+.env
+.venv/
+venv/
+*.log
+.idea/
+.vscode/

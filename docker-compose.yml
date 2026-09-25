@@ -1,0 +1,25 @@
+version: "3.8"
+
+services:
+  er:
+    build: .
+    container_name: amazon_ml_er
+    volumes:
+      # Mount your local dataset (do NOT put large data inside the image)
+      - ./dataset:/workspace/dataset:ro
+      # Mount code so changes reflect immediately
+      - ./src:/workspace/src
+      - ./notebooks:/workspace/notebooks
+      - ./output:/workspace/output
+      - ./utils:/workspace/utils
+    working_dir: /workspace
+    stdin_open: true
+    tty: true
+    # Uncomment if you need GPU later
+    # deploy:
+    #   resources:
+    #     reservations:
+    #       devices:
+    #         - driver: nvidia
+    #           count: 1
+    #           capabilities: [gpu]
